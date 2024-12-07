@@ -1,0 +1,7 @@
+population-total
+population:Employment.Firms.Total
+percent:Employment.Firms.Total
+filter:Employment.Firms.Total:le:5000
+population-total
+population:Employment.Firms.Total
+percent:Employment.Firms.Total
