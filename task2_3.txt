@@ -1,0 +1,2 @@
+filter:Ethnicities.Asian Alone:ge:.4
+percent:Income.Persons Below Poverty Level

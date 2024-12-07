@@ -135,8 +135,7 @@ int main(int argc, char *argv[]){
 
     int sum;
     int sum2;
-    int temp;
-    int temp2;
+    float temp;
     float percent;
     int index; 
 
@@ -240,7 +239,7 @@ int main(int argc, char *argv[]){
                 continue;
             }
 
-            temp2 = atoi(number);
+            temp = atof(number);
 
             index = -1;
             for(i = 0; i < header->items; i++){
@@ -255,22 +254,25 @@ int main(int argc, char *argv[]){
                 continue;
             }
             
-            temp = 0;
             if (strcmp(gele, "ge") == 0) {
-                temp = -1;
+                for(i = 0; i < rows; i++) {
+                    if(counties[i]->nums[index] < temp ) {
+                        counties[i]->valid = 0;
+                    }
+                }
+
             } else if (strcmp(gele, "le") == 0) {
-                temp = 1;
+                for(i = 0; i < rows; i++) {
+                    if(counties[i]->nums[index] > temp ) {
+                        counties[i]->valid = 0;
+                    }
+                }
+
             } else {
                 printf("Couldn't get ge/le");
                 continue;
             }
-
-            for(i = 0; i < rows; i++) {
-                if(counties[i]->nums[index] * temp >= temp2 * temp) {
-                    counties[i]->valid = 0;
-                }
-            }
-
+            
             continue;
         }
     }
